@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Seminar Registration</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="page-header">
+      <p class="eyebrow">Universidad de Dagupan · SITE</p>
+      <h1>IT Seminar Registration</h1>
+      <p class="lede">Complete the form below. All fields are required and will be validated before a registration summary is shown.</p>
+    </header>
+
+    <form id="registrationForm" novalidate>
+      <div class="field">
+        <label for="fullName">Full name</label>
+        <input type="text" id="fullName" name="fullName" required autocomplete="name" aria-describedby="fullNameError">
+        <p id="fullNameError" class="error-message" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="studentNumber">Student number</label>
+        <input type="text" id="studentNumber" name="studentNumber" required autocomplete="off" placeholder="24-1234-123" aria-describedby="studentNumberError">
+        <p id="studentNumberError" class="error-message" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" required autocomplete="email" aria-describedby="emailError">
+        <p id="emailError" class="error-message" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="mobileNumber">Mobile number</label>
+        <input type="tel" id="mobileNumber" name="mobileNumber" required autocomplete="tel" placeholder="09XXXXXXXXX or +639XXXXXXXXX" aria-describedby="mobileNumberError">
+        <p id="mobileNumberError" class="error-message" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required autocomplete="new-password" aria-describedby="passwordError passwordFeedback">
+        <p id="passwordError" class="error-message" aria-live="polite"></p>
+        <p id="passwordFeedback" class="password-feedback" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="confirmPassword">Confirm password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required autocomplete="new-password" aria-describedby="confirmPasswordError">
+        <p id="confirmPasswordError" class="error-message" aria-live="polite"></p>
+      </div>
+
+      <div class="field">
+        <label for="course">Course</label>
+        <select id="course" name="course" required aria-describedby="courseError">
+          <option value="">Select your course.</option>
+          <option value="BSIT">BSIT</option>
+          <option value="BSCS">BSCS</option>
+        </select>
+        <p id="courseError" class="error-message" aria-live="polite"></p>
+      </div>
+
+      <div class="field field-checkbox">
+        <div class="checkbox-row">
+          <input type="checkbox" id="terms" name="terms" required aria-describedby="termsError">
+          <label for="terms">I agree to the terms and conditions of the IT seminar.</label>
+        </div>
+        <p id="termsError" class="error-message" aria-live="polite"></p>
+      </div>
+
+      <div class="actions">
+        <button type="submit" id="registerBtn">Register</button>
+        <button type="reset" id="resetBtn">Reset</button>
+      </div>
+    </form>
+
+    <p id="successMessage" class="success-message" hidden></p>
+
+    <section id="registrationSummary" class="summary" hidden>
+      <h2>Registration Summary</h2>
+      <p><span class="summary-label">Full name:</span> <span id="summaryName"></span></p>
+      <p><span class="summary-label">Student number:</span> <span id="summaryStudentNumber"></span></p>
+      <p><span class="summary-label">Email address:</span> <span id="summaryEmail"></span></p>
+      <p><span class="summary-label">Mobile number:</span> <span id="summaryMobileNumber"></span></p>
+      <p><span class="summary-label">Course:</span> <span id="summaryCourse"></span></p>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
